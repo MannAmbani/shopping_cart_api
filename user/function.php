@@ -1,7 +1,7 @@
 <?php
 require '../config.php';
 
-
+// error
 function error422($message){
     $data = [
         'status' => 422,
@@ -11,6 +11,7 @@ function error422($message){
     echo json_encode($data);
     exit();
 }
+// insert
 function storeUser($userInput){
     global $conn;
     $email = mysqli_real_escape_string($conn,$userInput['email']);
@@ -55,6 +56,8 @@ function storeUser($userInput){
 
 
 }
+
+// get lis of data
 function getUserList()
 {
     global $conn;
@@ -91,6 +94,7 @@ function getUserList()
     }
 }
 
+// get single data
 function getUser($userParams){
     global $conn;
    if($userParams['user_id'] == null){
@@ -131,6 +135,8 @@ function getUser($userParams){
    }
 }
 
+
+// update data
 
 function updateUser($userInput,$userParams){
     global $conn;
@@ -179,7 +185,7 @@ function updateUser($userInput,$userParams){
     }
 }
 
-
+// delete data
 function deleteUser($userParams){
     global $conn;
     if(!isset($userParams['user_id'])){

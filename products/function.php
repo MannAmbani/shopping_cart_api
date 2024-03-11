@@ -1,7 +1,7 @@
 <?php
 require '../config.php';
 
-
+// error
 function error422($message){
     $data = [
         'status' => 422,
@@ -11,6 +11,8 @@ function error422($message){
     echo json_encode($data);
     exit();
 }
+
+// insert
 function storeProduct($productInput){
     global $conn;
     $product_name = mysqli_real_escape_string($conn,$productInput['product_name']);
@@ -20,15 +22,15 @@ function storeProduct($productInput){
     $shipping_cost = mysqli_real_escape_string($conn,$productInput['shipping_cost']);
     
     if(empty(trim($product_name))){
-        return error422('Enter Produc name');
+        return error422('Enter Product name');
     }else if(empty(trim($description))){
-        return error422('Enter Produc description');
+        return error422('Enter Product description');
     }else if(empty(trim($image))){
-        return error422('Enter Produc image');
+        return error422('Enter Product image');
     }else if(empty(trim($pricing))){
-        return error422('Enter Produc pricing');
+        return error422('Enter Product pricing');
     }else if(empty(trim($shipping_cost))){
-        return error422('Enter Produc shipping cost');
+        return error422('Enter Product shipping cost');
     }else{
         $query = "INSERT INTO product (product_name,description,image,pricing,shipping_cost) VALUES ('$product_name','$description','$image','$pricing','$shipping_cost')";
         $result = mysqli_query($conn,$query);
@@ -54,6 +56,7 @@ function storeProduct($productInput){
 
 
 }
+// get list of data
 function getProductList()
 {
     global $conn;
@@ -90,6 +93,7 @@ function getProductList()
     }
 }
 
+// get data
 function getProduct($productParams){
     global $conn;
    if($productParams['product_id'] == null){
@@ -130,7 +134,7 @@ function getProduct($productParams){
    }
 }
 
-
+// update
 function updateProduct($productInput,$productParams){
     global $conn;
     if(!isset($productParams['product_id'])){
@@ -147,15 +151,15 @@ function updateProduct($productInput,$productParams){
     $shipping_cost = mysqli_real_escape_string($conn,$productInput['shipping_cost']);
     
     if(empty(trim($product_name))){
-        return error422('Enter Produc name');
+        return error422('Enter Product name');
     }else if(empty(trim($description))){
-        return error422('Enter Produc description');
+        return error422('Enter Product description');
     }else if(empty(trim($image))){
-        return error422('Enter Produc image');
+        return error422('Enter Product image');
     }else if(empty(trim($pricing))){
-        return error422('Enter Produc pricing');
+        return error422('Enter Product pricing');
     }else if(empty(trim($shipping_cost))){
-        return error422('Enter Produc shipping cost');
+        return error422('Enter Product shipping cost');
     }else{
         $query = "UPDATE product SET product_name='$product_name',description ='$description',image='$image',pricing='$pricing',shipping_cost='$shipping_cost' WHERE product_id='$product_id' LIMIT 1";
         $result = mysqli_query($conn,$query);
@@ -178,6 +182,7 @@ function updateProduct($productInput,$productParams){
 }
 
 
+// delete
 function deleteProduct($productParams){
     global $conn;
     if(!isset($productParams['product_id'])){
