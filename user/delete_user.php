@@ -1,18 +1,29 @@
 <?php
+//setting header
 header('Access-Control-Allow-Origin:*');
 header('Content-Type: application/json');
 header('Access-Control-Allow-Method: DELETE');
 header('Access-Control-Allow-Headers: Content-Type, Access-Control -Allow-Headers, Authprization, X-Request-With');
+
+//include function.php
 include('function.php');
+
+//get the request method
 $requestMethod = $_SERVER["REQUEST_METHOD"];
+
+//checking if request method is DELETE
 if ($requestMethod == "DELETE") {
 
+ //Deleting data
     $deleteUser = deleteUser($_GET);
     echo $deleteUser;
 
 
    
 } else {
+    
+  // if request method is not Delete
+            // setting response array
     $data = [
         'status' => 405,
         'message' => $requestMethod . ' Method Not Allowed',
