@@ -1,0 +1,630 @@
+{
+	"info": {
+		"_postman_id": "6373c0e9-783e-45cf-b007-9369dc022a64",
+		"name": "web assignments",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33003039"
+	},
+	"item": [
+		{
+			"name": "getProduct",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost/shopping_cart_api/products/get_product.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"shopping_cart_api",
+						"products",
+						"get_product.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insertProduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product_name\":\"test\",\r\n    \"description\":\"TEst Desc\",\r\n    \"image\" : \"Test Img\",\r\n    \"pricing\":\"123\",\r\n    \"shipping_cost\":\"5\"\r\n\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost/shopping_cart_api/products/create_product.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"shopping_cart_api",
+						"products",
+						"create_product.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateProduct",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n            \"product_name\": \"one\",\r\n            \"description\": \"hello\",\r\n            \"image\": \"one\",\r\n            \"pricing\": \"23\",\r\n            \"shipping_cost\": \"5\"\r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/shopping_cart_api/products/update_product.php?product_id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"shopping_cart_api",
+						"products",
+						"update_product.php"
+					],
+					"query": [
+						{
+							"key": "product_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/shopping_cart_api/products/delete_product.php?product_id=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"shopping_cart_api",
+						"products",
+						"delete_product.php"
+					],
+					"query": [
+						{
+							"key": "product_id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insertUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "mann.ambani007@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "mann",
+							"type": "text"
+						},
+						{
+							"key": "purchase_history",
+							"value": "abc",
+							"type": "text"
+						},
+						{
+							"key": "shipping_address",
+							"value": "test",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/shopping_cart_api/user/create_user.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"shopping_cart_api",
+						"user",
+						"create_user.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/shopping_cart_api/user/get_user.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"shopping_cart_api",
+						"user",
+						"get_user.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUser",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n          \r\n            \"email\": \"mann.ambani007@gmail.com\",\r\n            \"password\": \"123\",\r\n            \"username\": \"khushi\",\r\n            \"purchase_history\": \"xyz\",\r\n            \"shipping_address\": \"home\"\r\n        \r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/shopping_cart_api/user/update_user.php?user_id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"shopping_cart_api",
+						"user",
+						"update_user.php"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteUser",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/shopping_cart_api/user/delete_user.php?user_id=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"shopping_cart_api",
+						"user",
+						"delete_user.php"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insertOrders",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "product_id",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "quantity",
+							"value": "45",
+							"type": "text"
+						},
+						{
+							"key": "total_cost",
+							"value": "500",
+							"type": "text"
+						},
+						{
+							"key": "shipping_address",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "payment_method",
+							"value": "card",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "processing",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/shopping_cart_api/orders/create_orders.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"shopping_cart_api",
+						"orders",
+						"create_orders.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getOrders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/shopping_cart_api/orders/get_orders.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"shopping_cart_api",
+						"orders",
+						"get_orders.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateOrders",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n           \r\n            \"product_id\": \"2\",\r\n            \"quantity\": \"3\",\r\n            \"total_cost\": \"503\",\r\n            \"shipping_address\": \"test update\",\r\n            \"payment_method\": \"cash\",\r\n            \"status\": \"Complete\"\r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/shopping_cart_api/orders/update_orders.php?order_id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"shopping_cart_api",
+						"orders",
+						"update_orders.php"
+					],
+					"query": [
+						{
+							"key": "order_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteOrders",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/shopping_cart_api/orders/delete_orders.php?order_id=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"shopping_cart_api",
+						"orders",
+						"delete_orders.php"
+					],
+					"query": [
+						{
+							"key": "order_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insertComments",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "product_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "rating",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "images",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "comment_text",
+							"value": "helllo world",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/shopping_cart_api/comments/create_comments.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"shopping_cart_api",
+						"comments",
+						"create_comments.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getComments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/shopping_cart_api/comments/get_comments.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"shopping_cart_api",
+						"comments",
+						"get_comments.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateComments",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n           \r\n            \"product_id\": \"1\",\r\n            \"user_id\": \"2\",\r\n            \"rating\": \"4\",\r\n            \"images\": \"test update\",\r\n            \"comment_text\": \"hey world\"\r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/shopping_cart_api/comments/update_comments.php?comment_id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"shopping_cart_api",
+						"comments",
+						"update_comments.php"
+					],
+					"query": [
+						{
+							"key": "comment_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteComments",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/shopping_cart_api/comments/delete_comments.php?comment_id=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"shopping_cart_api",
+						"comments",
+						"delete_comments.php"
+					],
+					"query": [
+						{
+							"key": "comment_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insertCart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product_id\":2,\r\n    \"user_id\":\"3\",\r\n    \"quantities\" : \"40\"\r\n   \r\n \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/shopping_cart_api/cart/create_cart.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"shopping_cart_api",
+						"cart",
+						"create_cart.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCart",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/shopping_cart_api/cart/get_cart.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"shopping_cart_api",
+						"cart",
+						"get_cart.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateCart",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n            \"product_id\": \"1\",\r\n            \"user_id\": \"2\",\r\n            \"quantities\": \"60\"\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/shopping_cart_api/cart/update_cart.php?cart_id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"shopping_cart_api",
+						"cart",
+						"update_cart.php"
+					],
+					"query": [
+						{
+							"key": "cart_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteCart",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/shopping_cart_api/cart/delete_cart.php?cart_id=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"shopping_cart_api",
+						"cart",
+						"delete_cart.php"
+					],
+					"query": [
+						{
+							"key": "cart_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
