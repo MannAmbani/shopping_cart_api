@@ -1,16 +1,4 @@
 <?php
-//this function removes unwanted warnings
-//setting header
-//include function.php
-//get the request method
-//checking if request method is post
-  //getting input data from request body
-    //if input data is empty
-      // accept from data 
-          // accept raw data
-           // if request method is not post
-            // setting response array
-
 
 //this function removes unwanted warnings
 error_reporting(0);

@@ -1,12 +1,6 @@
 <?php
 
 //setting header
-//include function.php
-//get the request method
-//checking if request method is DELETE
- //Deleting data
-  // if request method is not Delete
-            // setting response array
 
 header('Access-Control-Allow-Origin:*');
 header('Content-Type: application/json');

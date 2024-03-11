@@ -1,14 +1,6 @@
 <?php
 
 //setting header
-//include function.php
-//get the request method
-//checking if request method is GET
-  // checking if endpoint has cart_id
-     //get single data
-      // get cart list
-           // if request method is not GET
-            // setting response array
 header('Access-Control-Allow-Origin:*');
 header('Content-Type: application/json');
 header('Access-Control-Allow-Method: GET');

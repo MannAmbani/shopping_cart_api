@@ -1,13 +1,5 @@
 <?php
 //this function removes unwanted warnings
-//setting header
-//include function.php
-//get the request method
-//checking if request method is PUT
-  //getting input data from request body
-  //updating cart
-   // if request method is not post
-            // setting response array
 error_reporting(0);
 
 //setting header
