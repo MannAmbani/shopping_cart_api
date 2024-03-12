@@ -119,14 +119,19 @@ function getOrders($ordersParams){
     return error422('Enter orders id');
    } 
 
+//    getting order id
    $ordersId = mysqli_real_escape_string($conn,$ordersParams['order_id']);
+//   select query for one data
    $query = "SELECT * FROM orders WHERE order_id='$ordersId' LIMIT 1";
+//    executing query
    $result = mysqli_query($conn, $query);
-
+// if query executed successfully
    if($result){
-
+// if no of rows is one
     if(mysqli_num_rows($result) == 1){
+        // getting response
         $res = mysqli_fetch_assoc($result);
+        // sending response to user
         $data = [
             'status' => 200,
             'message' => 'Order Found',
@@ -135,6 +140,7 @@ function getOrders($ordersParams){
         header("HTTP/1.0 200 Successful");
         return json_encode($data); 
     }else{
+        // handeling 0 order or more then 1
         $data = [
             'status' => 404,
             'message' => 'No Order Found',
@@ -144,6 +150,7 @@ function getOrders($ordersParams){
     }
 
    }else{
+    // handeling error
     $data = [
         'status' => 500,
         'message' => 'Internal Server Error',
@@ -157,11 +164,14 @@ function getOrders($ordersParams){
 //update data
 function updateOrders($ordersInput,$ordersParams){
     global $conn;
+    //checking fo order id
     if(!isset($ordersParams['order_id'])){
         return error422('Orders id not Found in URL');
     }else if($ordersParams['order_id'] == null){
         return error422('Enter Order Id');
     }
+
+    // getting data 
     $order_id = mysqli_real_escape_string($conn,$ordersParams['order_id']);
 
     $product_id = mysqli_real_escape_string($conn,$ordersInput['product_id']);
@@ -171,6 +181,7 @@ function updateOrders($ordersInput,$ordersParams){
     $payment_method = mysqli_real_escape_string($conn,$ordersInput['payment_method']);
     $status = mysqli_real_escape_string($conn,$ordersInput['status']);
     
+    // validation
     if(empty(trim($product_id))){
         return error422('Enter Product Id');
     }else if(empty(trim($quantity))){
@@ -184,8 +195,11 @@ function updateOrders($ordersInput,$ordersParams){
     }else if(empty(trim($status))){
         return error422('Enter status');
     }else{
+        // update query
         $query = "UPDATE orders SET product_id='$product_id',quantity ='$quantity',total_cost='$total_cost',shipping_address='$shipping_address',payment_method='$payment_method',status='$status' WHERE order_id='$order_id' LIMIT 1";
+        // execute query
         $result = mysqli_query($conn,$query);
+        // handeling response
         if($result){
             $data = [
                 'status' => 200,
@@ -208,14 +222,19 @@ function updateOrders($ordersInput,$ordersParams){
 // delete data
 function deleteOrders($ordersParams){
     global $conn;
+    // checking for id
     if(!isset($ordersParams['order_id'])){
         return error422('orders id not Found in URL');
     }else if($ordersParams['order_id'] == null){
         return error422('Enter orders Id');
     }
+    // check for orders
     $order_id = mysqli_real_escape_string($conn,$ordersParams['order_id']);
+    // delete query
     $query = "DELETE FROM orders  WHERE order_id='$order_id' LIMIT 1";
+    // executing query
     $result = mysqli_query($conn,$query);
+    // handeling response
     if($result){
         $data = [
             'status' => 200,

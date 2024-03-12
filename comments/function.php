@@ -3,7 +3,7 @@
 require '../config.php';
 
 
-//functio handeling error 422 and response
+//function handeling error 422 and response
 function error422($message){
     $data = [
         'status' => 422,
